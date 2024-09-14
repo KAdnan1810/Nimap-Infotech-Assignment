@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Category>
+
+<h2>Categories</h2>
+<p>
+    <a href="/Category/Create" class="btn btn-primary">Create New Category</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Category Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryName</td>
+                <td>
+                    <a href="/Category/Edit/@item.CategoryId" class="btn btn-warning">Edit</a> |
+                    <a href="/Category/Delete/@item.CategoryId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
